@@ -1,0 +1,46 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Stock Prediction</h1>
+    <form action="/predict" method="post">
+        <label for="stock_name">Stock Name:</label>
+        <input type="text" id="stock_name" name="stock_name" required>
+        <br>
+        <label for="start_date">Start Date:</label>
+        <input type="date" id="start_date" name="start_date" required>
+        <br>
+        <label for="end_date">End Date:</label>
+        <input type="date" id="end_date" name="end_date" required>
+        <br>
+        <input type="submit" value="Predict">
+    </form>
+</body>
+</html> -->
+
+{% extends 'layout.html' %}
+
+{% block title %}Stock Prediction - Home{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <form action="/process_predict" method="post">
+            <!-- Your form content here -->
+            <label for="stock_name">Stock Name:</label>
+            <input type="text" id="stock_name" name="stock_name" required>
+            <br>
+            <label for="start_date">Start Date:</label>
+            <input type="date" id="start_date" name="start_date" required>
+            <br>
+            <label for="end_date">End Date:</label>
+            <input type="date" id="end_date" name="end_date" required>
+            <br>
+            <input type="submit" value="Predict">
+        </form>
+    </div>
+{% endblock %}

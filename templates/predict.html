@@ -1,0 +1,70 @@
+<!-- predict.html -->
+{% extends 'layout.html' %}
+
+{% block title %}Stock Prediction - Predict{% endblock %}
+
+{% block content %}
+    <h2>Stock Price Prediction</h2>
+ <!-- Chart div -->
+<div id="price-prediction-chart"></div>
+
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var stockData = {{ stock_data.to_dict(orient='list') | tojson | safe }};
+        var futurePredictions = {{ future_predictions | default('[]') | tojson | safe }};
+
+        // Check if stockData is null or undefined
+        if (!stockData || Object.keys(stockData).length === 0) {
+            console.error("Error: Stock data is null or undefined.");
+            return;
+        }
+
+        // Check if futurePredictions is null or undefined
+        if (!futurePredictions) {
+            console.error("Error: Future predictions data is null or undefined.");
+            return;
+        }
+
+        var trace1 = {
+            x: stockData['Date'],
+            y: stockData['Close'],
+            type: 'scatter',
+            mode: 'lines+markers',
+            name: 'Actual Prices',
+            line: {color: 'blue'}  // Set the color to blue for the actual prices
+        };
+
+        // Calculate x-values for the predicted prices starting from the last date of actual prices
+        var lastDate = new Date(stockData['Date'][stockData['Date'].length - 1]);
+        var predictedDates = Array.from({ length: futurePredictions.length }, (_, index) => {
+            var newDate = new Date(lastDate);
+            newDate.setDate(lastDate.getDate() + index + 1);
+            return newDate.toISOString().split('T')[0];  // Format as 'YYYY-MM-DD'
+        });
+
+        var trace2 = {
+            x: predictedDates,
+            y: futurePredictions,
+            type: 'scatter',
+            mode: 'lines+markers',
+            name: 'Future Prices',
+            line: {color: 'orange'}  // Set the color to orange for the future prices
+        };
+
+        var layout = {
+            title: 'Stock Price Prediction',
+            xaxis: {
+                title: 'Date'
+            },
+            yaxis: {
+                title: 'Closing Price'
+            }
+        };
+
+        Plotly.newPlot('price-prediction-chart', [trace1, trace2], layout);
+    });
+</script>
+
+
+{% endblock %}

@@ -1,0 +1,41 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h2>Prediction Result</h2>
+    <p>Data has been fetched and saved to Excel.</p>
+    <p>Download the data from the following link:</p>
+    <a href="{{ excel_file }}" download>Download Excel</a>
+</body>
+</html> -->
+
+{% extends 'layout.html' %}
+
+{% block title %}Stock Prediction - Result{% endblock %}
+
+{% block content %}
+    <div class="result-container">
+        <h2>LIVE DATA IS BEEN FETCHING</h2>
+        <p id="result-text" style="display: none;">Data has been fetched and saved to Excel.</p>
+        <!-- <p>Download the data from the following link:</p>
+        <a href="{{ excel_file }}" download>Download Excel</a> -->
+        <div>
+            <center>
+                <a href="{{ url_for('predict_stock') }}">
+                    <button id="btn">PREDICT</button>
+                </a>
+            </center>
+        </div>
+    </div>
+    <script>
+        // Delay the display of the result text after 10 seconds
+        setTimeout(function() {
+            document.getElementById('result-text').style.display = 'block';
+        }, 3000);
+    </script>
+{% endblock %}
