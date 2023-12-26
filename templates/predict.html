@@ -11,8 +11,8 @@
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-        var stockData = {{ stock_data.to_dict(orient='list') | tojson | safe }};
-        var futurePredictions = {{ future_predictions | default('[]') | tojson | safe }};
+        var stockData = {{ stock_data.to_dict(orient='list') | tojson }};
+        var futurePredictions = {{ future_predictions | tojson | safe }};
 
         // Check if stockData is null or undefined
         if (!stockData || Object.keys(stockData).length === 0) {
@@ -35,17 +35,9 @@
             line: {color: 'blue'}  // Set the color to blue for the actual prices
         };
 
-        // Calculate x-values for the predicted prices starting from the last date of actual prices
-        var lastDate = new Date(stockData['Date'][stockData['Date'].length - 1]);
-        var predictedDates = Array.from({ length: futurePredictions.length }, (_, index) => {
-            var newDate = new Date(lastDate);
-            newDate.setDate(lastDate.getDate() + index + 1);
-            return newDate.toISOString().split('T')[0];  // Format as 'YYYY-MM-DD'
-        });
-
         var trace2 = {
-            x: predictedDates,
-            y: futurePredictions,
+            x: futurePredictions.dates,
+            y: futurePredictions.prices,
             type: 'scatter',
             mode: 'lines+markers',
             name: 'Future Prices',
