@@ -1,3 +1,5 @@
+
+
 # linear_regression_model.py
 import pandas as pd
 from sklearn.model_selection import train_test_split
@@ -16,17 +18,18 @@ def train_linear_regression(df):
     model = LinearRegression()
     model.fit(X_train, y_train)
 
-    # Make predictions on the test set
-    predictions = model.predict(X_test)
-
-    # Get the last date from the test set for future predictions
-    last_date = df.loc[X_test[:, 0].argmax(), 'Date']
+    # Get the last date from the entire dataset for future predictions
+    last_date = df['Date'].max()
 
     # Number of days for future predictions
-    num_days = 30
+    num_days = 10
 
-    # Generate future dates for prediction
-    future_dates = pd.date_range(last_date, periods=num_days + 1, freq='B')[1:]
+    # Generate future dates for prediction starting from the day after the last date
+    future_dates = pd.date_range(last_date + pd.Timedelta(days=1), periods=num_days, freq='B')
+
+    # Print the last date and future dates for debugging
+    print(f"Last date: {last_date}")
+    print(f"Future dates: {future_dates}")
 
     # Convert future dates to the format used in the plot
     predicted_dates = future_dates.strftime('%Y-%m-%d').tolist()
@@ -37,7 +40,11 @@ def train_linear_regression(df):
     # Make predictions for future prices
     future_predictions = model.predict(future_dates_int)
 
+    # Convert predicted dates to string format for JavaScript
+    predicted_dates_js = future_dates.strftime('%a, %d %b %Y %H:%M:%S GMT').tolist()
+
     # Save predictions to a dictionary
-    predictions_dict = {'dates': predicted_dates, 'prices': future_predictions.tolist()}
+    predictions_dict = {'dates': predicted_dates_js, 'prices': future_predictions.tolist()}
 
     return predictions_dict
+
