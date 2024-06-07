@@ -1,0 +1,93 @@
+{% extends 'layout.html' %}
+
+{% block title %}Comparison - Predict{% endblock %}
+
+{% block content %}
+<br>
+<br>
+<link rel="stylesheet" href="{{ url_for('static', filename='c2_style.css') }}">    
+
+    <div class="content">
+    <!-- LEFT -->
+    <div class="screen-left">
+        <div class="container1">
+            <h1 class="hs">STOCK 1</h1>
+            <form action="/process_predict_1" method="post" target="left-iframe">
+                <!-- Your form content here -->
+                <label for="stock_name">Stock 2 Name:</label>
+                <input type="text" id="stock_name" name="stock_name" required>
+                <br>
+                <label for="start_date">Start Date:</label>
+                <input type="date" id="start_date" name="start_date" required>
+                <br>
+                <label for="end_date">End Date:</label>
+                <input type="date" id="end_date" name="end_date" required>
+                <br>
+                <input type="submit" value="PREDICT" id="find">
+            </form>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            
+            <iframe name="left-iframe"></iframe>
+        </div>
+    </div>
+        
+    <div class="screen-right">
+        <!-- RIGHT -->
+    
+        <div class="container2">
+            <h1 class="hs">STOCK 2</h1>
+            <form action="/process_predict_1" method="post" target="right-iframe">
+                <!-- Your form content here -->
+                <label for="stock_name">Stock 2 Name:</label>
+                <input type="text" id="stock_name" name="stock_name" required>
+                <br>
+                <label for="start_date">Start Date:</label>
+                <input type="date" id="start_date" name="start_date" required>
+                <br>
+                <label for="end_date">End Date:</label>
+                <input type="date" id="end_date" name="end_date" required>
+                <br>
+                <input type="submit" value="PREDICT" id="find">
+            </form>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <iframe name="right-iframe"></iframe>
+        </div>
+    </div>
+    
+    
+        </div>
+
+
+{% endblock %}

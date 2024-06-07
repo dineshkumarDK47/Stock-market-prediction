@@ -1,0 +1,237 @@
+body{
+    margin: 0%;
+    background-color: black;
+}
+
+/**************************************************************** top-tab **********************************************************************************/
+
+.top-tab{
+    background-color: rgb(0, 0, 0);
+    height: 100px;
+    width: 1518px;
+    margin: 0%;
+    text-align: right;
+    
+
+}
+
+.smp{
+    color: rgb(254, 254, 254);
+    height: 0%;
+    width: 35%;
+    font-weight: bold;
+    text-align: left;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0%;
+    padding-top: 2%;
+    padding-left: 5%;
+
+}
+
+.smp:hover{
+    color: gold;
+}
+
+.tab {
+
+    text-align: right ;
+    margin-right: 15px;
+}
+
+.tab .tablinks {
+    background-color: black;
+    color: white;
+    padding: 14px 16px;
+    transition: 0.3s;   
+    font-size: 18px;
+    border: none;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+}
+
+
+.tab .tablinks:hover {
+    background-color: gold;
+    border-radius: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.tab .tablinks.active {
+    background-color: #ff0000;
+}
+
+/**************************************************************** join us **********************************************************************************/
+
+.usimg{
+    height: 585px;
+    width: 1518px;
+    filter: blur(8px);
+    margin: 0%;
+}
+
+
+.joc{
+    
+    border: rgb(0, 0, 0);
+    border-style: solid;
+    border-radius: 8px;
+    
+    padding: 15px;
+    
+    background-color: gold;
+    font-size: 50px;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+
+    position: absolute;
+    top: 150px;
+    left: 343px;
+
+    height: fit-content;
+    width: 800px;
+  
+}
+
+.jcp{
+    background-color: rgb(0, 0, 0);
+    color: gold;
+
+    border: gold;
+    border-style: solid;
+    border-radius: 8px;
+    
+    padding: 15px;
+
+    position: absolute;
+    top: 275px;
+    left: 343px;
+
+    height: 240px;
+    width: 800px;
+
+    font-size: 25px;
+    text-align: center;
+    font-family: Times, 'Times New Roman', serif;
+    font-weight: bolder;
+
+}
+
+/**************************************************************** contact us **********************************************************************************/
+
+.lab{
+    color: rgb(0, 0, 0);
+    background-color: gold;
+    
+    height: 600px;
+    width: 600px;
+
+    margin-top: 100px;
+    margin-left: 450px;
+    margin-bottom: 30px;
+
+    border-radius: 20px;
+
+    font-size: 20px;
+    font-weight: bolder;
+
+    padding: 20px;
+}
+
+label{
+    font-size: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bolder;
+    background-color: black;
+    color: gold;
+    padding: 5px;
+    border-radius: 8px;
+}
+
+input{
+    height: 30px;
+    width: 500px;
+
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+
+    background-color: black;
+    color: gold;
+    font-size: 18px;
+
+}
+
+#subject{
+    height: 150px;
+    width: 540px;
+    margin: 20px;
+    border-radius: 8px;
+
+    background-color: black;
+    color: gold;
+    
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    
+}
+
+.subm{
+    background-color: black;
+    color: gold;
+    text-shadow:0 0 5px gold;
+    box-shadow: inset 0 0 50px gold;
+
+
+    width: fit-content;
+    height: 65px;
+    
+    margin-top: 50px;
+    margin-left: 213px;
+    
+    border-radius: 8px;
+    border-width: 3px;
+
+    padding: 18px 50px;
+    /* padding-left: 50px;
+    padding-right: 50px; */
+
+    font-size: 20px;
+    font-weight: bolder;
+    text-decoration: none;
+
+}
+
+.subm:hover{
+    background-color: gold;
+    color: black;
+    text-shadow:0 0 5px black;
+    box-shadow: inset 0 0 50px black;
+}
+
+/**************************************************************** hr **********************************************************************************/
+
+/* hr{
+    position: relative;
+    top: 80px;
+
+    width: 1517px;
+    height: 200px;    
+    border: none;
+    background-color: gold;
+} */
+
+/**************************************************************** Disclaimer **********************************************************************************/
+
+/* .dis{
+    color: red;
+    text-align: center;
+    font-family: 'Arial Narrow Bold', sans-serif;
+
+    padding: 15px;
+
+    position: absolute;
+    top: 1550px;
+    left: 160px;
+} */

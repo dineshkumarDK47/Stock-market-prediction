@@ -1,0 +1,99 @@
+{% extends 'layout.html' %}
+
+{% block title %}Stock Prediction - Predict{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='deck.css') }}">
+
+<!-- -----------------------------------------------------------------welcome-----------------------------------------------------------------------------     -->
+<div class="home">
+<div class="welcome">
+
+    <img src="{{ url_for('static', filename='h_img/smp_bg1.jpg') }}" class="bgimg">
+    <div class="wtsmp">   
+        <h2>WELCOME</h2>
+        <h6>to</h6>
+        <h4><span class="fl">S</span>tock <span class="fl">M</span>arket <span class="fl">P</span>Prediction</h4>
+    </div>
+</div>
+</div>
+<!-- -----------------------------------------------------------------all-----------------------------------------------------------------------------     -->
+
+<div class="all">
+<h1 class="alh">Hover The Images For Information</h1>
+
+<!-- -----------------------------------------------------------------power-----------------------------------------------------------------------------     -->
+    
+<div class="dimg">
+    <img src="{{ url_for('static', filename='h_img/unlock.jpg') }}" class="uimg">    
+    <div class="power">
+        <h5 class="uppa">Unlock The Power of Predictive Analytics</h5>
+        <p class="pp">At Stock Market Prediction, we empower investors with cutting-edge tools and insights to navigate the dynamic world of stock markets. Whether you're a seasoned 
+                    trader or a novice investor, our platform provides accurate predictions, insightful analytics, and valuable resources to help you make informed decisions.</p>
+    
+    </div>
+</div>
+
+<!-- -----------------------------------------------------------------why-----------------------------------------------------------------------------     -->
+
+<div class="dimg">
+    
+    <img src="{{ url_for('static', filename='h_img/why.jpg') }}" class="wimg">    
+    <div class="why">
+        <h5 class="wcu">Why Choose Us ?</h5>
+        
+            <ul class="wp">
+            <li><span class="wlt">Proven Accuracy:</span> Our predictions are backed by robust algorithms and historical performance metrics, ensuring reliability and precision.</li>
+
+            <li><span class="wlt">User-Friendly Interface:</span> Experience a seamless journey through our user-friendly interface. Predicting stock movements has never been this intuitive.</li>
+            
+            <li><span class="wlt"> Latest Market Trends:</span> Stay ahead of the curve with real-time updates on market trends. Our platform equips you with the knowledge needed to seize opportunities.</li>
+            </ul>    
+            
+    
+    </div>
+</div>
+
+<!-- -----------------------------------------------------------------predit-----------------------------------------------------------------------------     -->
+
+<div class="dimg">
+    <img src="{{ url_for('static', filename='h_img/predit.jpg') }}" class="pimg">    
+    <div class="predit">
+        <h5 class="fp">Featured Prediction</h5>
+        <p class="pp">Witness the success of our latest forecast, precisely identifying a notable uptrend in Stock Market. Our advanced algorithms and 
+                    data-driven insights empower you to make informed investment decisions. Explore opportunities, navigate market trends, and elevate your 
+                    investment strategy with Stock Market Prediction.
+    </div>
+</div>
+
+<!-- -----------------------------------------------------------------get-----------------------------------------------------------------------------     -->
+
+<div class="dimg">
+    
+    <img src="{{ url_for('static', filename='h_img/get.jpg') }}" class="gimg">    
+    <div class="get">
+        <h5 class="gst">Get Started Today !!</h5>
+        
+            <ul class="wp">
+            <li><span class="glt">Explore Predictions:</span>Dive into stock predictions for your favorite stocks. Discover emerging trends and insights to make informed decisions.</li>
+
+            <li><span class="glt">Compare Stocks:</span>Use our tools to compare stock predictions easily. Evaluate key metrics side by side and make well-informed investment choices.</li>
+
+            <li><span class="glt">Compare Stocks:</span>Access educational resources to enhance your market analysis skills. beginner guides to advanced strategies, stay navigating the stock market.</li>
+            
+    
+    </div>
+</div>
+
+<!-- -----------------------------------------------------------------Disclaimer-----------------------------------------------------------------------------     -->
+
+<hr>
+
+<div class="dis">
+    <h3 class="dh">!! Disclaimer !!</h3>
+    <P class="dp">Trading involves risks, and past performance does not guarantee future results. Please review our risk disclaimer before making any investment decisions.</P>
+</div>
+
+</div>
+
+{% endblock %}

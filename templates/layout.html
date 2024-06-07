@@ -4,21 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock %}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='deck.css') }}">
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-
+    <style>
+        #foot{
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-    <header id="head">
-        <h1>Stock Prediction</h1>
-    </header>
+        <div class="top-tab">
+            <h1 class="smp">STOCK MARKET PREDICTION</h1>  
+                <div class="tab">
+                    <a class="tablinks" href="{{ url_for('home') }}">Home</a>
+                    <a class="tablinks" href="{{ url_for('prediction_page') }}">Predict</a>
+                    <a class="tablinks" href="{{ url_for('comparison') }}">Compare</a> 
+                    <a class="tablinks" href="{{ url_for('manual') }}">Manual</a>
+                    <a class="tablinks" href="{{ url_for('news') }}">News</a>
+                    <a class="tablinks" href="{{ url_for('contact_us') }}">Contact us</a>
+                </div> 
+            </div>        
 
     <div class="content">
         {% block content %}{% endblock %}
     </div>
-
-    <footer id="foot">
-        <p>&copy; 2023 Stock Prediction App</p>
-    </footer>
 </body>
 </html>

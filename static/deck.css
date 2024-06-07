@@ -1,0 +1,563 @@
+body{
+    background-color: rgb(6,7,61); 
+    margin: 0%;
+    width: 100%;
+}
+
+/**************************************************************** top-tab **********************************************************************************/
+
+
+.top-tab{
+    background-color: rgb(0, 0, 0);
+    height: 100px;
+    width: 100vw;
+    margin: 0 auto;
+    text-align: right;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.smp{
+    color: rgb(254, 254, 254);
+    height: 0%;
+    width: 45%;
+    font-weight: bold;
+    text-align: left;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0%;
+    padding-top: 2%;
+    padding-left: 2%;
+ 
+}
+
+.smp:hover{
+    color: #3a6870;
+}
+
+.tab {
+    text-align: right ;
+    margin-right: 0px;
+}
+
+.tab .tablinks {
+    background-color: black;
+    color: white;
+    padding: 14px 16px;
+    transition: 0.3s;   
+    font-size: 18px;
+    border: none;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+
+}
+
+
+.tab .tablinks:hover {
+    background-color: #3a6870;
+    border-radius: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.tab .tablinks.active {
+    background-color: #ff0000;
+}
+
+/**************************************************************** welcome **********************************************************************************/
+
+.home{
+    width: 50%;
+}
+
+.bgimg{
+    height: 595px;
+    width: 1518px;
+    filter: blur(2px);
+}
+
+.wtsmp{
+    position: absolute;
+    top: 270px;
+    left: 400px;
+    margin: auto;
+    
+
+}
+
+h2{
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 0%;
+    font-family: Geneva, Tahoma, sans-serif;
+    font-size: 6em;
+    font-weight: bolder;
+    height: fit-content;
+    color: rgb(255, 255, 255);
+    
+    text-shadow: 0 0 8px #ff0000, 0 0 5px rgb(255, 0, 0);
+}
+
+h6, h4{
+    text-align: center;
+    margin-top: 0%;
+    margin-bottom: 0%;
+    font-family: Geneva, Tahoma, sans-serif;
+    font-size: 4em;
+    font-weight: bolder;
+    height: fit-content;
+    color: white;
+
+    text-shadow: 0 0 8px #ff0000, 0 0 5px rgb(255, 0, 0);
+}
+
+.fl{
+    color: red;
+    text-shadow: 0 0 2px #000000, 0 0 4px rgb(0, 0, 0);
+    
+}
+
+/**************************************************************** all **********************************************************************************/
+
+.all{
+    position: absolute;
+    top: 200px;
+}
+
+.alh{
+    color: rgba(255, 255, 255, 0.605);
+    position: relative;
+    top: 580px;
+    left: 213px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+
+    margin: auto;
+    border: rgb(8, 4, 86);
+    border-style: solid;
+    border-radius: 5px;
+    padding: 5px;
+
+    width: fit-content;
+    height: fit-content;
+}
+
+/**************************************************************** power **********************************************************************************/
+
+.power{
+    background-color: rgb(6,7,61);
+    color: white;
+    text-align: left;
+    
+    height: 273px;
+    width: 715px; 
+    padding: 20px;
+    
+    margin-top: 50px;
+    margin-left: 50px;
+    
+    position: absolute;
+    top: 695px;
+    left: 10px;
+    
+    border-radius: 20px;
+    border-color: rgb(103, 103, 111);
+    box-shadow: inset 0 0 20px rgb(0, 0, 0);
+    border-width: 0px;
+    border-style: solid;
+
+    opacity: 0;
+    display: none;
+    
+}
+
+.uppa{
+
+    font-size: 40px;
+    color: rgb(17, 0, 255);
+    text-shadow: 0 0 5px #000000;
+    margin-top: 0px;
+    margin-bottom: 15px;
+    margin-left: 0px; 
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
+}
+
+.pp{
+
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px ;
+    margin-right: 0px;
+    text-align: left;
+    font-size: 28px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
+}
+
+p{
+    text-align: justify;
+}
+
+.uimg{
+    height: 298px;
+    width: 555px;
+    border-radius: 20px;
+    position: absolute;
+    top: 755px;
+    left: 880px;
+    opacity: 1;
+    transition: .5s ease;
+    
+    
+}
+
+.dimg:hover .uimg {
+    opacity: 0.3;
+}
+
+.dimg:hover .power{
+    opacity: 1;
+    display: block;
+}
+
+/**************************************************************** why **********************************************************************************/
+
+.why{
+    background-color: rgb(6,7,61);
+    color: white;
+    text-align: left;
+    
+    height: 355px;
+    width: 715px; 
+    padding: 20px;
+    
+    margin-top: 50px;
+    margin-left: 50px;
+
+    position: absolute;
+    top: 1110px;
+    left: 660px;    
+    
+    border-radius: 20px;
+    border-color: rgb(103, 103, 111);
+    box-shadow: inset 0 0 20px rgb(0, 0, 0);
+    border-width: 0px;
+    border-style: solid;
+
+    opacity: 0;
+    display: none;
+    
+}
+
+.wcu{
+
+    font-size: 40px;
+    color: yellow;
+    text-shadow: 0 0 5px #000000;
+    margin-top: 0px;
+    margin-bottom: 15px;
+    margin-left: 0px; 
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.wimg{
+    height: 375px;
+    width: 555px;
+    border-radius: 20px;
+    position: absolute;
+    top: 1175px;
+    left: 80px;
+    opacity: 1;
+    transition: .5s ease;
+    
+}
+
+.dimg:hover .wimg {
+    opacity: 0.3;
+}
+
+.dimg:hover .why{
+    opacity: 1;
+    display: block;
+} 
+
+/**************************************************************** predit **********************************************************************************/
+
+.predit{
+    background-color: rgb(6,7,61);
+    color: white;
+    text-align: left;
+    
+    height: 273px;
+    width: 715px; 
+    padding: 20px;
+    
+    margin-top: 50px;
+    margin-left: 50px;
+    
+    position: absolute;
+    top: 1585px;
+    left: 10px;
+    
+    border-radius: 20px;
+    border-color: rgb(103, 103, 111);
+    box-shadow: inset 0 0 20px rgb(0, 0, 0);
+    border-width: 0px;
+    border-style: solid;
+
+    opacity: 0;
+    display: none;
+    
+}
+
+.fp{
+
+    font-size: 40px;
+    color: rgba(255, 85, 0, 0.884);
+    text-shadow: 0 0 5px #000000;
+    margin-top: 0px;
+    margin-bottom: 15px;
+    margin-left: 0px; 
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
+}
+
+.pp{
+
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px ;
+    margin-right: 0px;
+    text-align: left;
+    font-size: 28px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
+}
+
+p{
+    text-align: justify;
+}
+
+.pimg{
+    height: 298px;
+    width: 555px;
+    border-radius: 20px;
+    position: absolute;
+    top: 1645px;
+    left: 880px;
+    opacity: 1;
+    transition: .5s ease;
+    
+    
+}
+
+.dimg:hover .pimg {
+    opacity: 0.3;
+}
+
+.dimg:hover .predit{
+    opacity: 1;
+    display: block;
+}
+
+/**************************************************************** get **********************************************************************************/
+
+.get{
+    background-color: rgb(6,7,61);
+    color: white;
+    text-align: left;
+    
+    height: 355px;
+    width: 715px; 
+    padding: 20px;
+    
+    margin-top: 50px;
+    margin-left: 50px;
+
+    position: absolute;
+    top: 1990px;
+    left: 660px;    
+    
+    border-radius: 20px;
+    border-color: rgb(103, 103, 111);
+    box-shadow: inset 0 0 20px rgb(0, 0, 0);
+    border-width: 0px;
+    border-style: solid;
+
+    opacity: 0;
+    display: none;
+    
+}
+
+.gst{
+
+    font-size: 40px;
+    color: rgb(0, 238, 255);
+    text-shadow: 0 0 5px #000000;
+    margin-top: 0px;
+    margin-bottom: 15px;
+    margin-left: 0px; 
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.gimg{
+    height: 375px;
+    width: 555px;
+    border-radius: 20px;
+    position: absolute;
+    top: 2050px;
+    left: 80px;
+    opacity: 1;
+    transition: .5s ease;
+    
+}
+
+.dimg:hover .gimg {
+    opacity: 0.3;
+}
+
+.dimg:hover .get{
+    opacity: 1;
+    display: block;
+}
+
+/**************************************************************** LIST (spam) **********************************************************************************/
+
+.wp{
+
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px ;
+    margin-right: 0px;
+    text-align: left;
+    font-size: 28px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
+}
+
+.wlt{
+    color: rgb(255, 213, 0);
+}
+
+.glt{
+    color: rgb(0, 255, 4);
+}
+
+/**************************************************************** hr **********************************************************************************/
+
+hr{
+    position: absolute;
+    top: 2550px;
+
+    width: 1517px;
+    height: 200px;    
+    border: none;
+    background-color: rgb(8, 4, 86);
+}
+
+/**************************************************************** Disclaimer **********************************************************************************/
+
+.dis{
+    color: red;
+    text-align: center;
+    font-family: 'Arial Narrow Bold', sans-serif;
+
+    padding: 15px;
+
+    position: relative;
+    top: 2500px;
+    left: 200px;
+}
+
+/**************************************************************** May try **********************************************************************************
+
+.dis{
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(255, 0, 0);  
+    
+    
+    padding: 15px;
+
+    position: absolute;
+    top: 2550px;
+    left: 25%;
+
+   height: fit-content;
+}
+
+.dh{
+    text-align: center;
+    color: rgb(255, 0, 0);
+    font-size: 15px;
+    width: 120px;
+    margin-left: 300px;
+ 
+}
+
+.dp{
+    font-size: 10px;
+    text-align: center;
+    color: rgb(255, 0, 0);
+    
+}
+
+
+rgb(8, 4, 86)
+
+rgb(166, 255, 0)
+rgb(0, 255, 4)
+
+..tablinks{
+    border-style: solid;
+    border-color: white;
+    border-top: 0cm;
+    border-bottom: 0cm;
+    border-width: 1px;
+} 
+
+.tablinks{
+    color: white;
+    text-decoration: none;
+    margin: 0%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: medium;
+    
+    padding-left: 20px;
+    padding-right: 20px;
+    
+    border-color: rgb(255, 0, 0);
+    border-style: solid;
+    border-top: 0cm;
+    border-bottom: 0cm;
+
+    
+} 
+
+.flm{
+    color: rgb(234, 255, 0);
+}
+
+.flp{
+    color: rgb(30, 0, 255);
+}
+
+.uimg{
+    height: 300px;
+    width: 755px;
+    border-radius: 20px;
+    position: absolute;
+    top: 750px;
+    left: 50px;
+}
+  
+.why{
+height: 273px;
+
+  .wimg{
+    height: 298px;
+    font-size: 22.5px;
+
+text-shadow: 0 0 8px #000000, 0 0 5px rgb(0, 179, 255);
+
+rgb(6,25,84)
+rgb(3,83,157)
+body background --->     rgb(6,7,61)
+orgin background --->    rgb(195, 255, 255)
+***********************************************************************************************************************************************************/

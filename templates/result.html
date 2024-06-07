@@ -1,18 +1,4 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stock Prediction Result</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
-<body>
-    <h2>Prediction Result</h2>
-    <p>Data has been fetched and saved to Excel.</p>
-    <p>Download the data from the following link:</p>
-    <a href="{{ excel_file }}" download>Download Excel</a>
-</body>
-</html> -->
+
 
 {% extends 'layout.html' %}
 
@@ -21,13 +7,20 @@
 {% block content %}
     <div class="result-container">
         <h2>LIVE DATA IS BEEN FETCHING</h2>
-        <p id="result-text" style="display: none;">Data has been fetched and saved to Excel.</p>
+        <p id="result-text" style="display: none;">Data has been fetched</p>
         <!-- <p>Download the data from the following link:</p>
         <a href="{{ excel_file }}" download>Download Excel</a> -->
         <div>
             <center>
                 <a href="{{ url_for('predict_stock') }}">
-                    <button id="btn">PREDICT</button>
+                    <button id="btn">SHORT TERM</button>
+                </a>
+            </center>
+            <br>
+            <br>
+            <center>
+                <a href="{{ url_for('predict_stock_moving_average') }}">
+                    <button id="btn">LONG TERM</button>
                 </a>
             </center>
         </div>

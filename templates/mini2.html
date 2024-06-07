@@ -1,0 +1,188 @@
+
+<div id="price-prediction-chart"></div>
+<center>
+
+
+</center>
+
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var stockData = {{ stock_data.to_dict(orient='list') | tojson }};
+        var futurePredictions = {{ future_predictions | default('[]') | tojson | safe }};
+        var actualPrices = {{ actual_prices | tojson | safe }};
+        
+        // Check if stockData is null or undefined
+        if (!stockData || Object.keys(stockData).length === 0) {
+            console.error("Error: Stock data is null or undefined.");
+            return;
+        }
+
+        // Check if futurePredictions is null or undefined
+        if (!futurePredictions) {
+            console.error("Error: Future predictions data is null or undefined.");
+            return;
+        }
+
+        var trace1 = {
+            x: stockData['Date'],
+            y: stockData['Close'],
+            type: 'scatter',
+            mode: 'lines+markers',
+            name: 'Actual Prices',
+            line: {color: 'blue'}  // Set the color to blue for the actual prices
+            
+        };
+
+        var trace2 = {
+            x: stockData['Date'].concat(futurePredictions.dates),
+            y: stockData['Close'].concat(futurePredictions.prices),
+            type: 'scatter',
+            mode: 'lines',
+            name: 'Future Prices',
+            line: { color: 'orange' },  // Set the color to orange for the line
+            marker: { color: 'orange' }  // Set the color to orange for the markers
+        };
+
+        var closingPrices = stockData['Close'];
+        var n = closingPrices.length;
+        var sumX = 0;
+        var sumY = 0;
+        var sumXY = 0;
+        var sumX2 = 0;
+      
+        for (var i = 0; i < n; i++) {
+          var x = i; // Assuming dates are represented by their position (0 for first date)
+          var y = closingPrices[i];
+          sumX += x;
+          sumY += y;
+          sumXY += x * y;
+          sumX2 += x * x;
+        }
+      
+        var slope = (n * sumXY - sumX * sumY) / (n * sumX2 - sumX * sumX);
+        var intercept = (sumY - slope * sumX) / n;
+      
+        // Calculate predicted prices for trendline
+        var predictedPrices = [];
+        for (var i = 0; i < n + futurePredictions.dates.length; i++) {
+          predictedPrices.push(slope * i + intercept);
+        }
+
+        // Add trendline
+        var trendline = {
+            x: stockData['Date'].concat(futurePredictions.dates),
+            y: predictedPrices,
+            type: 'scatter',
+            mode: 'dashed',
+            name: 'Trendline',
+            line: { color: 'green' }  // Set the color to green for the trendline
+        };
+
+        var data = [{
+            x: stockData['Date'],
+            y: stockData['Close'],
+            text: stockData['Date'].map(function(date, i) {
+              return 'Date: ' + date + '<br>Price: ' + stockData['Close'][i];
+            }),
+            type: 'scatter'
+            // ... (other trace definitions) ...
+          }];
+          var windowSize  =15;
+          var movingAverages = [];
+
+          for (var i = 0; i < closingPrices.length; i++) {
+          // Calculate SMA only for valid windows (enough data points)
+          if (i >= windowSize - 1) {
+              var sum = 0;
+              for (var j = 0; j < windowSize; j++) {
+              sum += closingPrices[i - j];
+              }
+              movingAverages.push(sum / windowSize);
+          } else {
+              // Handle cases with insufficient data for SMA (fill with NaN or other strategy)
+              movingAverages.push(null);  // Placeholder for missing data points (optional)
+          }
+          }
+
+        // Calculate moving average
+        var movingAverage = {
+            x: stockData['Date'].slice(windowSize - 1),
+            y: movingAverages,
+            type: 'scatter',
+            mode: 'dotted',
+            name: 'Moving Average',
+            line: { color: 'red' }  // Set the color to red for the moving average line
+        };
+
+        // Define layout first
+var layout = {
+    title: 'Stock Price Prediction',
+    xaxis: {
+        title: 'Date'
+    },
+    yaxis: {
+        title: 'Closing Price'
+    }
+};
+
+// Calculate price differences and recommendations
+// Calculate price differences and recommendations
+var priceDifferences = [];
+for (var i = 0; i < actualPrices.length; i++) {
+    priceDifferences.push(futurePredictions.prices[i] - actualPrices[i]);
+}
+
+var recommendations = priceDifferences.map(function (difference) {
+    return difference > 0 ? 'Not Buy' : 'Buy';
+});
+
+// Create trace for recommendation chart
+var recommendationTrace = {
+    x: futurePredictions.dates,
+    y: recommendations,
+    type: 'scatter',
+    mode: 'markers',
+    name: 'Recommendation',
+    marker: {
+        symbol: 'circle-open',
+        color: function(recommendation) {
+            return recommendation === 'Buy' ? 'green' : 'red';
+          }
+    },
+    yaxis: 'y2' // Assign recommendation chart to y-axis 2
+};
+
+// Update layout to accommodate recommendation chart
+var updatedLayout = Object.assign({}, layout);
+updatedLayout.yaxis2 = {
+    title: 'Recommendation',
+    overlaying: 'y',
+    side: 'right',
+    showgrid: false,
+    tickvals: [0, 1], // Assuming Buy=0, Not Buy=1
+    ticktext: ['Buy', 'Not Buy'] // Labels for ticks
+};
+
+// Create the plot with recommendation chart
+Plotly.newPlot('price-prediction-chart', [trace2, trendline, movingAverage], updatedLayout)
+    .then(function() {
+        // Add recommendation trace to existing plot
+        Plotly.addTraces('price-prediction-chart', recommendationTrace);
+    });
+
+         // Calculate accuracy
+         var predictedPrices = futurePredictions.prices;
+         var absolutePercentageErrors = predictedPrices.map(function(predictedPrice, index) {
+             return Math.abs((actualPrices[index] - predictedPrice) / actualPrices[index]) * 100;
+         });
+         var meanAbsolutePercentageError = absolutePercentageErrors.reduce(function(acc, val) {
+             return acc + val;
+         }, 0) / absolutePercentageErrors.length;
+         var accuracy = 100 - meanAbsolutePercentageError;
+         
+         // Display accuracy below the chart
+         document.getElementById('accuracy').textContent = 'Accuracy: ' + accuracy.toFixed(2) + '%';
+       
+    });
+</script>

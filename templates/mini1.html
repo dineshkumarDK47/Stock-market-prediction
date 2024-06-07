@@ -1,0 +1,21 @@
+<div class="result-container">
+   
+    <div>
+        <br>
+        <br>
+        <center>
+            <a href="{{ url_for('predict_stock_comp') }}">
+                <button id="btn">PREDICT</button>
+            </a>
+        </center>
+        <br>
+        <br>
+        
+    </div>
+</div>
+<script>
+    // Delay the display of the result text after 10 seconds
+    setTimeout(function() {
+        document.getElementById('result-text').style.display = 'block';
+    }, 3000);
+</script>

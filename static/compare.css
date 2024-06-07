@@ -1,0 +1,12 @@
+/* compare.css */
+.left-side,
+.right-side {
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.split-line {
+    height: 100%;
+    width: 1px;
+    background-color: black;
+}

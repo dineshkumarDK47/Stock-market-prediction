@@ -28,6 +28,7 @@
 {% block title %}Stock Prediction - Home{% endblock %}
 
 {% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <div class="container">
         <form action="/process_predict" method="post">
             <!-- Your form content here -->

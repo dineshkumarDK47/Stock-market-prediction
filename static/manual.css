@@ -1,0 +1,38 @@
+html,body{
+    height: 100%;
+   background-color: #87ceeb;
+    font-size: 2em;
+    line-height: 200px;
+}
+#parent{
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+#side{
+    display: table-cell;
+    width: 10%;
+    background-color: #f5fffa;
+}
+#main{
+    display: table-cell;
+    width: 90%;
+    background-color: #f5fffa;
+}
+.wid{
+  width: 90%;
+  margin-top: 230px;
+  margin-left: 40px;
+}
+.wid1{
+  margin-top: 40px;
+  margin-left: 240px;
+}
+.wid b{
+  font-size: 25px;
+}
+.wid u{
+  margin-left: 103px;
+  font-size: 40px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
